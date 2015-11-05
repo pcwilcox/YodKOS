@@ -16,9 +16,9 @@ SET throt to 1.0.
 LOCK THROTTLE TO throt.   // 1.0 is the max, 0.0 is idle.
 
 //This is our countdown loop, which cycles from 10 to 0
-UPDATE "Counting down:".
+HUDTEXT("Beginning launch countdown: ", 2, 1, 12, green, false).
 FROM {local countdown is 10.} UNTIL countdown = 0 STEP {SET countdown to countdown - 1.} DO {
-    UPDATE "..." + countdown.
+    HUDTEXT ("..." + countdown).
     WAIT 1. // pauses the script here for 1 second.
 }
 
